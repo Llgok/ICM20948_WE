@@ -1009,7 +1009,7 @@ void ICM20948_WE::readAllData(uint8_t *data)
 {
     switchBank(0);
 
-    _bus->read(ICM20948_ACCEL_OUT, data, 20);
+    _bus->read(static_cast<uint8_t>(ICM20948_ACCEL_OUT), data, 20);
 }
 
 xyzFloat ICM20948_WE::readICM20948xyzValFromFifo()
@@ -1018,7 +1018,7 @@ xyzFloat ICM20948_WE::readICM20948xyzValFromFifo()
     xyzFloat xyzResult = {0.0, 0.0, 0.0};
     switchBank(0);
 
-    _bus->read(ICM20948_FIFO_R_W, fifoTriple, 6);
+    _bus->read(static_cast<uint8_t>(ICM20948_FIFO_R_W), fifoTriple, 6);
 
     xyzResult.x = (static_cast<int16_t>((fifoTriple[0] << 8) + fifoTriple[1])) * 1.0;
     xyzResult.y = (static_cast<int16_t>((fifoTriple[2] << 8) + fifoTriple[3])) * 1.0;
