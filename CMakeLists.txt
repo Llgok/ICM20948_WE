@@ -5,7 +5,7 @@ idf_component_register(
         INCLUDE_DIRS 
         ${src_dirs}
         REQUIRES
-        "driver" "arduino_cpp_bus_driver"
+        "driver" "cpp_bus_driver"
     )
 
 target_compile_options(
