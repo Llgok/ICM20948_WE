@@ -22,7 +22,13 @@
 #ifndef ICM20948_WE_H_
 #define ICM20948_WE_H_
 
+#define ARDUINO 10812
+
+#if (ARDUINO >= 100)
  #include "Arduino.h"
+#else
+ #include "WProgram.h"
+#endif
 
 #include <Wire.h>
 #include <SPI.h>
