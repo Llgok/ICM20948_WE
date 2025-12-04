@@ -48,13 +48,13 @@ bool ICM20948_WE::init(){
     
     reset_ICM20948();
     
-    uint8_t tries = 0;
-    while(( whoAmI() != ICM20948_WHO_AM_I_CONTENT) && (tries < 10)){
-        reset_ICM20948();
-        delay(300);
-        tries++;        
-    }
-    if(tries == 10) return false;
+    // uint8_t tries = 0;
+    // while(( whoAmI() != ICM20948_WHO_AM_I_CONTENT) && (tries < 10)){
+    //     reset_ICM20948();
+    //     delay(300);
+    //     tries++;        
+    // }
+    // if(tries == 10) return false;
     
     accOffsetVal.x = 0.0;
     accOffsetVal.y = 0.0;
