@@ -22,7 +22,9 @@
 #ifndef ICM20948_WE_H_
 #define ICM20948_WE_H_
 
+#ifndef ARDUINO
 #define ARDUINO 10812
+#endif
 
 #if (ARDUINO >= 100)
  #include "Arduino.h"
